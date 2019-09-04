@@ -19,7 +19,7 @@ class AudioViewer extends Component {
 
   renderLoading() {
     if (this.state.loading) {
-      return <Loading />;
+      return <Loading override={this.props.loadingComponent} />;
     }
     return null;
   }

@@ -1,5 +1,5 @@
 
-# react-file-viewer
+# react-file-viewer-ext
 
 Extendable file viewer for web
 
@@ -33,6 +33,9 @@ pass a callback for a logging utility.
 `errorComponent` react element [optional]: A component to render in case of error
 instead of the default error component that comes packaged with react-file-viewer.
 
+`loadingComponent` react element [optional]: A component to render in loading time
+instead of the default loading component that comes packaged with react-file-viewer.
+
 `unsupportedComponent` react element [optional]: A component to render in case
 the file format is not supported.
 
@@ -44,6 +47,7 @@ import React, { Component } from 'react';
 import logger from 'logging-library';
 import FileViewer from 'react-file-viewer';
 import { CustomErrorComponent } from 'custom-error';
+import { CustomLoadingComponent } from 'custom-loading';
 
 const file = 'http://example.com/image.png'
 const type = 'png'
@@ -55,6 +59,7 @@ class MyComponent extends Component {
         fileType={type}
         filePath={file}
         errorComponent={CustomErrorComponent}
+        loadingComponent={CustomLoadingComponent}
         onError={this.onError}/>
     );
   }
